@@ -1,0 +1,274 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* สีหลักและสีตกแต่ง */
+:root {
+    --primary-color: #b87333; /* สีทองแดง */
+    --secondary-color: #3b2f2f; /* สีน้ำตาลเข้ม */
+    --background-light: #ffffff; /* พื้นหลังสีขาว */
+    --text-color: #333333; /* สีข้อความหลัก */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Main Section */
+.main-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Container */
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Content (Main Area) */
+.content {
+    flex: 4;
+    padding: 30px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease;
+}
+
+.content h1, .content h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Home Content */
+.home-content {
+    position: relative;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* รูปภาพในมุมขวาบนของกรอบ */
+.home-image {
+    position: absolute; /* วางตำแหน่งรูปภาพในมุมขวาบนของกรอบ */
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+    
+}
+
+
+
+/* About Me Layout */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* About Me Images (Vertical Layout) */
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 200px;
+}
+
+.about-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* ขอบมน */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* เงา */
+    transition: transform 0.3s ease; /* แอนิเมชันเมื่อ hover */
+}
+
+.about-images img:hover {
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+}
+
+/* About Text */
+.about-text {
+    flex: 3;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #FFD700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+
+/* Projects Styling */
+.content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.content ul li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.content ul li:hover {
+    transform: translateY(-5px);
+}
+
+.content ul li h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.content ul li p {
+    color: #555;
+}
+
+.content ul li img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Section Visibility Control */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* จัดวาง Sidebar และเนื้อหาหลักในแนวตั้ง */
+    .container {
+        flex-direction: column;
+    }
+
+    /* ปรับ Sidebar ให้ครอบคลุมความกว้างหน้าจอทั้งหมด */
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* ขยาย Content ให้เต็มหน้าจอ */
+    .content {
+        width: 100%;
+    }
+
+    /* ปรับขนาดรูปภาพใน Home Section */
+    .home-image {
+        width: 100px; /* ขนาดที่เล็กลงเมื่ออยู่บนหน้าจอเล็ก */
+        top: 10px;
+        right: 10px;
+    }
+
+    /* ปรับการจัดวางรูปภาพใน About Me ให้เล็กลง */
+    .about-images {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ลดขนาดตัวอักษรในส่วนต่างๆ ให้เหมาะสมกับหน้าจอขนาดเล็ก */
+    .content h1, .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .content p, .sidebar ul li {
+        font-size: 0.9rem;
+    }
+
+    /* ปรับรูปภาพใน About Me ให้เล็กลงอีก */
+    .about-images img {
+        width: 80px;
+    }
+}
